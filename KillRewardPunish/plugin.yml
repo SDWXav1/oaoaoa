@@ -1,0 +1,4 @@
+name: KillRewardPunish
+version: 1.0
+main: com.example.killrewardpunish.KillRewardPunish
+api-version: 1.21
