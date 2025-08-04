@@ -1,4 +1,4 @@
-spackage com.example.killrewardpunish;
+package com.example.killrewardpunish;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
