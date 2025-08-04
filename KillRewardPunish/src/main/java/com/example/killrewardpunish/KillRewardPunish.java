@@ -1,4 +1,4 @@
-package com.example.killrewardpunish;
+spackage com.example.killrewardpunish;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -40,7 +40,7 @@ public class KillRewardPunish extends JavaPlugin implements Listener {
         switch (effect) {
             case 0:
                 dead.sendMessage(ChatColor.RED + "You feel slower...");
-                dead.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 999999, stack));
+                dead.addPotionEffect(new PotionEffect(PotionEffectType.SLOWNESS, 999999, stack));
                 break;
             case 1:
                 dead.sendMessage(ChatColor.RED + "You feel weaker...");
@@ -70,7 +70,7 @@ public class KillRewardPunish extends JavaPlugin implements Listener {
             if (newPenalty <= 0) {
                 deathPenalties.remove(uuid);
                 killer.sendMessage(ChatColor.GREEN + "You've cured your punishment!");
-                killer.removePotionEffect(PotionEffectType.SLOW);
+                killer.removePotionEffect(PotionEffectType.SLOWNESS);
                 killer.removePotionEffect(PotionEffectType.WEAKNESS);
             } else {
                 deathPenalties.put(uuid, newPenalty);
@@ -83,7 +83,7 @@ public class KillRewardPunish extends JavaPlugin implements Listener {
         switch (reward) {
             case 0:
                 killer.sendMessage(ChatColor.GREEN + "You feel powerful!");
-                killer.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, bonus));
+                killer.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, Integer.MAX_VALUE, bonus));
                 break;
             case 1:
                 killer.sendMessage(ChatColor.AQUA + "You feel healthier!");
@@ -91,7 +91,7 @@ public class KillRewardPunish extends JavaPlugin implements Listener {
                 break;
             case 2:
                 killer.sendMessage(ChatColor.LIGHT_PURPLE + "You feel faster at everything!");
-                killer.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, Integer.MAX_VALUE, bonus));
+                killer.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, Integer.MAX_VALUE, bonus));
                 break;
         }
     }
